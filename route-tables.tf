@@ -33,9 +33,9 @@ resource "aws_route_table_association" "private" {
 }
 
 resource "aws_route" "public-igw-route" {
-  route_table_id            = "aws_route_table.public-table.id"
+  route_table_id            = aws_route_table.public-table.id
   destination_cidr_block    = "0.0.0.0/0"
-  gateway_id = "aws_internet_gateway.gw.id"
+  gateway_id = aws_internet_gateway.gw.id
 }
 
 
